@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harsha Senevirathne | Executive Systems, Networks &amp; Automation Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              accent: '#06b6d4',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              violet: '#8b5cf6',
+              rose: '#f43f5e',
+            },
+            dark: {
+              bg: '#050811',
+              surface: '#0a0f1d',
+              card: '#0f172a',
+              border: '#1e293b',
+              hover: '#172544',
+            }
+          },
+          boxShadow: {
+            'glow-blue': '0 0 35px -5px rgba(59, 130, 246, 0.4)',
+            'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.4)',
+            'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.4)',
+            'glow-amber': '0 0 35px -5px rgba(245, 158, 11, 0.4)',
+            'glow-gold': '0 0 45px -5px rgba(234, 179, 8, 0.5)',
+            'glow-purple': '0 0 35px -5px rgba(139, 92, 246, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #050811; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+    /* Glassmorphism Styles */
+    .glass-panel {
+      background: rgba(10, 15, 29, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(8, 12, 24, 0.9) 100%);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-card:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+      transform: translateY(-2px);
+    }
+    .flagship-border {
+      background: linear-gradient(135deg, rgba(234, 179, 8, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+      border: 1.5px solid rgba(234, 179, 8, 0.45);
+    }
+    .network-border {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(16, 185, 129, 0.08) 100%);
+      border: 1.5px solid rgba(6, 182, 212, 0.35);
+    }
+    .mentor-border {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(59, 130, 246, 0.08) 100%);
+      border: 1.5px solid rgba(139, 92, 246, 0.35);
+    }
+
+    /* Gradients */
+    .gradient-text-blue {
+      background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-emerald {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #fde047 0%, #eab308 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-text-purple {
+      background: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+
+    /* Floating Canvas */
+    #network-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -5;
+      opacity: 0.45;
+    }
+
+    /* Pulse Radar Animation */
+    @keyframes radar-pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 0.4; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .radar-pulse {
+      animation: radar-pulse 3s infinite ease-in-out;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .glass-card, .glass-panel { background: white !important; border: 1px solid #ccc !important; }
+    }
+  </style>
+</head>
+<body class="bg-dark-bg text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Interactive Network Mesh Canvas Background -->
+  <canvas id="network-canvas"></canvas>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="fixed top-0 left-1/4 w-[650px] h-[650px] bg-brand-600/15 rounded-full blur-[160px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 9s;"></div>
+  <div class="fixed top-1/3 right-5 w-[550px] h-[550px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-1/4 left-10 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[130px] pointer-events-none -z-10"></div>
+  <div class="fixed inset-0 bg-grid-pattern opacity-60 pointer-events-none -z-10"></div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-white/5 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 via-amber-500 to-cyan-400 p-[2px] shadow-glow-blue transition-transform duration-300 group-hover:scale-105">
+          <div class="w-full h-full bg-dark-bg rounded-[10px] flex items-center justify-center">
+            <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-amber-300 to-cyan-300 text-lg tracking-wider font-mono">HS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-base tracking-tight group-hover:text-blue-400 transition-colors">Harsha Senevirathne</span>
+          <span class="block text-xs font-mono text-cyan-400/80">Systems • Automation • Networks</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden xl:flex items-center gap-1 bg-dark-surface/80 border border-white/5 px-3 py-1.5 rounded-full backdrop-blur-md">
+        <a href="#overview" class="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Overview</a>
+        <a href="#kpis" class="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">ROI &amp; Ledger</a>
+        <a href="#flagship" class="px-3 py-1.5 text-xs font-semibold text-amber-300 hover:text-amber-200 rounded-full hover:bg-amber-500/10 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-crown text-[10px]"></i> Flagship CMMS
+        </a>
+        <a href="#networks" class="px-3 py-1.5 text-xs font-semibold text-cyan-300 hover:text-cyan-200 rounded-full hover:bg-cyan-500/10 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-network-wired text-[10px]"></i> Network &amp; VPN
+        </a>
+        <a href="#hardware" class="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Hardware &amp; IT</a>
+        <a href="#mentor" class="px-3 py-1.5 text-xs font-semibold text-purple-300 hover:text-purple-200 rounded-full hover:bg-purple-500/10 transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-user-shield text-[10px]"></i> Leadership
+        </a>
+        <a href="#projects" class="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-full hover:bg-white/5 transition-all">7 Systems</a>
+      </nav>
+
+      <!-- Right Actions: Sound Toggle + PDF + Contact -->
+      <div class="flex items-center gap-2.5">
+        <!-- Interactive Web Audio SFX Toggle Button -->
+        <button id="sfx-toggle" onclick="toggleAudioSFX()" class="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-mono text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-xl hover:bg-cyan-500/20 transition-all" title="Toggle Futuristic Tech Sound Effects">
+          <i id="sfx-icon" class="fa-solid fa-volume-high"></i>
+          <span class="hidden sm:inline" id="sfx-text">SFX: ON</span>
+        </button>
+
+        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 text-xs font-medium text-slate-300 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:text-white transition-all shadow-sm">
+          <i class="fa-solid fa-file-arrow-down text-cyan-400"></i>
+          <span>Save PDF</span>
+        </button>
+        <a href="#contact" class="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-cyan-500 rounded-xl hover:from-brand-500 hover:to-cyan-400 transition-all shadow-glow-blue">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+          <span class="hidden sm:inline">Contact</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-10 pb-16 md:pt-16 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column -->
+      <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        
+        <!-- Live Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-500 -ml-4"></span>
+          <span class="text-xs font-medium text-blue-300 font-mono tracking-wide">6-Month Enterprise Impact: 7 Systems • 16 Laptops • Network Overhaul</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          Slashing Enterprise Costs Through <br class="hidden sm:inline" />
+          <span class="gradient-text-blue">Proprietary Automation</span> &amp; Zero-Downtime Networks.
+        </h1>
+
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+          Architecting high-availability infrastructure at <span class="text-white font-semibold">Cyril Rodrigo Restaurants</span> under visionary IT leadership. Slashed over <strong>LKR 3.8 Million+</strong> in capital &amp; recurring licensing costs by deploying 7 proprietary software platforms, designing a resilient multi-outlet VPN mesh network, and modernizing admin hardware.
+        </p>
+
+        <!-- Credentials Badges -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-cyan-300">
+            <i class="fa-solid fa-graduation-cap"></i> BSc (Hons) Systems &amp; Networking — SLIIT
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-amber-300">
+            <i class="fa-solid fa-certificate"></i> Cisco CCNA Certified
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-violet-300">
+            <i class="fa-solid fa-book-open"></i> CCNP Enterprise Core (Reading)
+          </span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-white/5 border border-white/10 text-emerald-300">
+            <i class="fa-solid fa-layer-group"></i> 8+ Languages &amp; Multi-DB
+          </span>
+        </div>
+
+        <!-- Hero CTAs -->
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+          <a href="#flagship" class="px-5 py-3 text-sm font-semibold rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600 hover:opacity-95 text-slate-950 font-bold transition-all shadow-glow-amber flex items-center gap-2">
+            <i class="fa-solid fa-crown text-slate-950"></i>
+            <span>Flagship CMMS</span>
+          </a>
+          <a href="#networks" class="px-5 py-3 text-sm font-semibold rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 hover:opacity-95 text-white font-bold transition-all shadow-glow-cyan flex items-center gap-2">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Network &amp; VPN (1M Saved)</span>
+          </a>
+          <a href="#mentor" class="px-5 py-3 text-sm font-semibold rounded-xl bg-purple-600/30 hover:bg-purple-600/40 border border-purple-500/40 text-purple-200 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-handshake-angle text-purple-400"></i>
+            <span>Kanishka Boss Mentorship</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Profile Showcase Card -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-md">
+          <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-500 via-amber-500 to-cyan-500 rounded-3xl blur-xl opacity-35 transition duration-1000"></div>
+
+          <div class="relative glass-card rounded-2xl p-6 sm:p-8 text-center border border-white/10 shadow-2xl">
+            <!-- Profile Avatar / Image Container -->
+            <div class="relative mx-auto w-44 h-52 sm:w-48 sm:h-56 mb-5">
+              <div class="w-full h-full rounded-2xl p-1 bg-gradient-to-tr from-brand-500 via-amber-400 to-cyan-400 shadow-glow-cyan overflow-hidden">
+                <img id="userAvatar" src="profile.jpg" alt="Harsha Senevirathne" 
+                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Harsha+Senevirathne&background=0a0f1d&color=38bdf8&size=512&bold=true&font-size=0.38';" 
+                     class="w-full h-full object-cover object-top rounded-xl bg-dark-surface">
+              </div>
+              <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-dark-bg p-2 rounded-xl border-2 border-dark-card shadow-lg flex items-center justify-center" title="Active on Systems">
+                <i class="fa-solid fa-bolt text-xs font-bold text-white"></i>
+              </div>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white">Harsha Senevirathne</h2>
+            <p class="text-cyan-400 text-sm font-medium mt-1">Automation | Systems &amp; Network Administrator</p>
+            <p class="text-slate-400 text-xs font-mono mt-0.5">Cyril Rodrigo Restaurants</p>
+
+            <!-- Quick Specs -->
+            <div class="mt-5 py-3 px-4 rounded-xl bg-dark-bg/70 border border-white/5 text-left space-y-2.5">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium"><i class="fa-solid fa-graduation-cap text-blue-400 mr-1.5"></i> Degree</span>
+                <span class="text-white font-semibold">BSc (Hons) SLIIT</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium"><i class="fa-solid fa-network-wired text-cyan-400 mr-1.5"></i> Networking</span>
+                <span class="text-cyan-300 font-semibold">CCNA / CCNP (R)</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium"><i class="fa-solid fa-server text-emerald-400 mr-1.5"></i> Uptime SLA</span>
+                <span class="text-emerald-400 font-bold font-mono">99.999% (0.0001% Downtime)</span>
+              </div>
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium"><i class="fa-solid fa-coins text-amber-400 mr-1.5"></i> Total Cost Saved</span>
+                <span class="text-amber-300 font-bold font-mono">LKR 3.8M+ Saved</span>
+              </div>
+            </div>
+
+            <!-- Socials -->
+            <div class="mt-5 flex items-center justify-center gap-3">
+              <a href="https://www.linkedin.com/in/harsha-senavirathne" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/50 flex items-center justify-center text-slate-300 hover:text-blue-400 transition-all">
+                <i class="fa-brands fa-linkedin-in text-sm"></i>
+              </a>
+              <a href="mailto:harsharavindu9564@gmail.com" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-cyan-600/20 border border-white/10 hover:border-cyan-500/50 flex items-center justify-center text-slate-300 hover:text-cyan-400 transition-all">
+                <i class="fa-solid fa-envelope text-sm"></i>
+              </a>
+              <a href="tel:+94719343835" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-emerald-600/20 border border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-slate-300 hover:text-emerald-400 transition-all">
+                <i class="fa-solid fa-phone text-sm"></i>
+              </a>
+              <a href="https://wa.me/94719343835" target="_blank" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-emerald-600/20 border border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-slate-300 hover:text-emerald-400 transition-all">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- High-Impact KPI Counter Matrix -->
+  <section id="kpis" class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      
+      <!-- Metric 1: Financial Savings -->
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-emerald-500/40 transition-all group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Total Capital &amp; OPEX Saved</span>
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-sack-dollar text-sm"></i>
+          </div>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-baseline gap-1">
+          <span class="gradient-text-emerald">LKR 3.8M+</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1 font-medium">SaaS elimination, POS VPN savings &amp; telecom revamp</p>
+      </div>
+
+      <!-- Metric 2: Network Reliability -->
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Network Stability SLA</span>
+          <div class="w-9 h-9 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-tower-broadcast text-sm"></i>
+          </div>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-baseline gap-1">
+          <span class="gradient-text-cyan">99.999%</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1 font-medium">0.0001% downtime; emergency outage calls dropped to 0</p>
+      </div>
+
+      <!-- Metric 3: Systems Delivered -->
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-amber-500/40 transition-all group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Software Systems Built</span>
+          <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-microchip text-sm"></i>
+          </div>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-baseline gap-1">
+          <span class="gradient-text-gold">7 Systems</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1 font-medium">100% in-house architecture delivered in 6 months</p>
+      </div>
+
+      <!-- Metric 4: Hardware & Laptops -->
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-purple-500/40 transition-all group">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400">Workstations Deployed</span>
+          <div class="w-9 h-9 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-laptop text-sm"></i>
+          </div>
+        </div>
+        <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-baseline gap-1">
+          <span class="gradient-text-purple">16 Laptops</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-1 font-medium">Brand-new admin hardware configured + Enterprise Copier</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 🤝 LEADERSHIP & MENTORSHIP TRIBUTE: KANISHKA BOSS -->
+  <!-- ======================================================== -->
+  <section id="mentor" class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-3xl p-8 sm:p-12 mentor-border shadow-glow-purple overflow-hidden">
+      
+      <!-- Ambient Purple Glow Backing -->
+      <div class="absolute -right-20 -top-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[110px] pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Photo Spot -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm">
+            <div class="relative rounded-2xl p-1 bg-gradient-to-tr from-purple-500 via-brand-500 to-cyan-400 shadow-glow-purple overflow-hidden">
+              <!-- Photo slot for Kanishka Boss & Harsha -->
+              <img id="mentorPhoto" src="kanishka_and_harsha.jpg" alt="Kanishka & Harsha" 
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80';" 
+                   class="w-full h-72 sm:h-80 object-cover rounded-xl bg-dark-surface filter brightness-95">
+              <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-center">
+                <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-purple-500/30 text-purple-200 border border-purple-400/40 backdrop-blur-md">
+                  <i class="fa-solid fa-handshake text-cyan-300 mr-1.5"></i> Collaborative IT Leadership
+                </span>
+                <p class="text-white text-sm font-bold mt-1.5">Kanishka (Head of IT) &amp; Harsha Senevirathne</p>
+                <p class="text-slate-300 text-[11px]">Cyril Rodrigo Restaurants Tech Vision</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Story & Tribute -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30">
+            <i class="fa-solid fa-crown text-amber-400"></i> Executive Mentorship &amp; Strategic Alignment
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Empowered Under Visionary Leadership: <span class="gradient-text-purple">Kanishka Boss</span>
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            The extraordinary velocity of deploying 7 enterprise systems, executing zero-downtime network revamp, and saving LKR 3.8M+ was made possible through the unwavering leadership, guidance, and strategic trust of <strong>Kanishka Boss</strong>.
+          </p>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            From Day 1, Kanishka actively involved Harsha in every high-level IT decision—from infrastructure overhauls and telecom renegotiations to proprietary application design. This leadership partnership provided the autonomy and technical backing to transform Cyril Rodrigo Restaurants into a tech-forward hospitality leader.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            <div class="bg-dark-bg/80 p-3.5 rounded-xl border border-white/5">
+              <div class="text-purple-300 font-bold text-xs flex items-center gap-1.5 mb-1">
+                <i class="fa-solid fa-shield-heart text-purple-400"></i> Complete Leadership Trust
+              </div>
+              <p class="text-[11px] text-slate-400">Total technical freedom to architect solutions that eliminate corporate waste.</p>
+            </div>
+            <div class="bg-dark-bg/80 p-3.5 rounded-xl border border-white/5">
+              <div class="text-cyan-300 font-bold text-xs flex items-center gap-1.5 mb-1">
+                <i class="fa-solid fa-bolt text-cyan-400"></i> Unified IT Execution
+              </div>
+              <p class="text-[11px] text-slate-400">Rapid executive approval cycle turning concepts into live production code.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 💻 HARDWARE, WORKSTATION DEPLOYMENT & IT ENABLEMENT -->
+  <!-- ======================================================== -->
+  <section id="hardware" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
+      
+      <div class="max-w-3xl mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 text-purple-400 text-xs font-mono mb-2">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Operational IT Enablement
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Admin Hardware Fleet &amp; Corporate Digital Modernization
+        </h2>
+        <p class="text-slate-300 mt-2 text-sm sm:text-base">
+          Ensuring zero-lag administrative performance, standardized communication, and centralized multi-outlet print infrastructure.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Hardware 1: 16 B/N Laptops -->
+        <div class="bg-dark-surface/80 rounded-2xl p-6 border border-white/5 hover:border-purple-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30 uppercase font-bold">16 Units Configured</span>
+            <h3 class="text-lg font-bold text-white mt-2 mb-2">16 Brand-New Admin Laptops</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Procured and completed comprehensive enterprise administrator setups on 16 brand-new laptops. Deployed customized operating system tuning, security policies, and performance tweaks so administrative personnel experience zero system latency and maximum daily productivity.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>Workstation Speed:</span>
+            <span class="font-bold text-emerald-400">Zero Lag Performance</span>
+          </div>
+        </div>
+
+        <!-- Hardware 2: Outlets & Admin Emails -->
+        <div class="bg-dark-surface/80 rounded-2xl p-6 border border-white/5 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-envelope-circle-check"></i>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 uppercase font-bold">Enterprise Mail Setup</span>
+            <h3 class="text-lg font-bold text-white mt-2 mb-2">Outlets &amp; Admin Email Architecture</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Seamlessly set up and migrated corporate business email accounts for administrative staff and all dining outlets. Standardized domain routing, anti-spam filters, and client mail synchronizations, ensuring smooth operational correspondence without delivery drops.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>Communication Status:</span>
+            <span class="font-bold text-cyan-400">100% Verified Delivery</span>
+          </div>
+        </div>
+
+        <!-- Hardware 3: Copier Setup & Ongoing Web Development -->
+        <div class="bg-dark-surface/80 rounded-2xl p-6 border border-white/5 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+              <i class="fa-solid fa-print"></i>
+            </div>
+            <span class="px-2.5 py-1 rounded-md text-[10px] font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 uppercase font-bold">Network Copier &amp; Web</span>
+            <h3 class="text-lg font-bold text-white mt-2 mb-2">Enterprise Copier &amp; Website Dev</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Procured, networked, and configured a heavy-duty commercial multi-function copier/printer with secure departmental user PIN access and centralized network scanning. Simultaneously leading corporate website development, pacing towards 100% on-time milestone delivery.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+            <span>Corporate Web Dev:</span>
+            <span class="font-bold text-emerald-400">Active &amp; 100% Velocity</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- ⚡ ENTERPRISE NETWORK INFRASTRUCTURE & VPN MASTERY -->
+  <!-- ======================================================== -->
+  <section id="networks" class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-3xl p-8 sm:p-12 network-border shadow-glow-cyan overflow-hidden">
+      
+      <!-- Top Title & Badge -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10 pb-6 border-b border-white/10">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 mb-2">
+            <i class="fa-solid fa-network-wired text-cyan-400"></i>
+            ENTERPRISE NETWORK ENGINEERING &amp; TELECOM INFRASTRUCTURE
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            How Cisco Networking &amp; Tailscale VPN Saved Over <span class="gradient-text-emerald">LKR 1.25M+</span>
+          </h2>
+          <p class="text-slate-300 text-sm mt-1 max-w-3xl">
+            Applying CCNA and CCNP routing, mesh tunneling, and wireless topology design to transform sluggish legacy connections into bulletproof, zero-downtime operations.
+          </p>
+        </div>
+        <div class="self-start md:self-auto px-4 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-right">
+          <div class="text-xs font-mono uppercase">Network Availability</div>
+          <div class="text-2xl font-bold font-mono">99.999% SLA</div>
+          <div class="text-[10px] text-slate-400">0.0001% Total Downtime</div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars of Network Feats -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Feat 1: POS VPN Mesh Tunneling (Scienter + Tailscale) -->
+        <div class="bg-dark-surface/90 rounded-2xl p-6 border border-cyan-500/20 hover:border-cyan-500/50 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-bold">
+                🔥 LKR 1,000,000+ Direct Savings
+              </span>
+              <i class="fa-solid fa-lock text-cyan-400 text-lg"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+              Multi-Branch POS VPN Mesh Tunneling (Scienter System)
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              During Dialog telecom operations, the company purchased only <strong>ONE single central POS location license</strong> for the Scienter management software. Buying additional multi-site licenses or dedicated telecom leased lines would have incurred massive capital expenditures exceeding <strong>LKR 1,000,000+</strong>.
+            </p>
+
+            <div class="bg-dark-bg/80 p-3.5 rounded-xl border border-white/5 space-y-2 mb-4 text-xs">
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                <span><strong>The Technical Breakthrough:</strong> Architected secure encrypted VPN mesh tunnels leveraging <strong>Tailscale &amp; WireGuard</strong> protocols.</span>
+              </div>
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span><strong>Zero-Friction Operations:</strong> All dining outlets now print bills, process receipts, and sync live transactions smoothly across branches with zero network latency.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-mono">Tailscale • Site-to-Site VPN • POS</span>
+            <span class="text-emerald-400 font-bold font-mono">Saved LKR 1,000,000+</span>
+          </div>
+        </div>
+
+        <!-- Feat 2: Head Office Network & Wi-Fi Revamp -->
+        <div class="bg-dark-surface/90 rounded-2xl p-6 border border-blue-500/20 hover:border-blue-500/50 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-blue-500/15 text-blue-300 border border-blue-500/30 font-bold">
+                From 10 Mbps Lag to 100% Stable
+              </span>
+              <i class="fa-solid fa-wifi text-blue-400 text-lg"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
+              Head Office Enterprise Wi-Fi &amp; Core Topology Redesign
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Head Office internet previously suffered crippling 10 Mbps congestion. Administrative staff were completely blocked from sending critical emails, accessing cloud drives, or dispatching printer jobs due to network packet collisions.
+            </p>
+
+            <div class="bg-dark-bg/80 p-3.5 rounded-xl border border-white/5 space-y-2 mb-4 text-xs">
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-blue-400 mt-0.5"></i>
+                <span><strong>Topology Optimization:</strong> Redesigned the physical and logical network layout, isolating broadcast domains and configuring enterprise QoS traffic shaping.</span>
+              </div>
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                <span><strong>Flawless Stability:</strong> Achieved 100% Wi-Fi reliability with practically <strong>0.0001% downtime</strong>, eliminating all latency bottlenecks for executive staff.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-mono">VLANs • QoS • Enterprise APs</span>
+            <span class="text-blue-400 font-bold font-mono">100% Stable Wi-Fi</span>
+          </div>
+        </div>
+
+        <!-- Feat 3: Outlets Router Overhaul (5 Calls/Day to ZERO) -->
+        <div class="bg-dark-surface/90 rounded-2xl p-6 border border-emerald-500/20 hover:border-emerald-500/50 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-bold">
+                Emergency Breakdown Calls: 5/day ➔ 0
+              </span>
+              <i class="fa-solid fa-router text-emerald-400 text-lg"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors mb-2">
+              Full Multi-Outlet Router &amp; WAN Infrastructure Overhaul
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              When Harsha took over, dining outlets frequently dropped offline. Outdated consumer routers caused constant disruptions, resulting in over <strong>5 urgent breakdown panic calls per day</strong> from frustrated outlet managers.
+            </p>
+
+            <div class="bg-dark-bg/80 p-3.5 rounded-xl border border-white/5 space-y-2 mb-4 text-xs">
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                <span><strong>Hardware Modernization:</strong> Executed a full revamp across branch routers, deploying high-speed broadband connections across <strong>90%+ of outlets</strong>.</span>
+              </div>
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span><strong>Zero Daily Interruptions:</strong> Reduced emergency troubleshooting calls to virtually zero, slashing downtime to <strong>0.0001%</strong> and protecting sales during peak dining hours.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-mono">WAN Optimization • Hardware Revamp</span>
+            <span class="text-emerald-400 font-bold font-mono">90% Outlets on High-Speed</span>
+          </div>
+        </div>
+
+        <!-- Feat 4: Corporate Telecom Fleet Rationalization (1,300 LKR plan) -->
+        <div class="bg-dark-surface/90 rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30 font-bold">
+                Telecom OPEX Slashed
+              </span>
+              <i class="fa-solid fa-mobile-screen-button text-purple-400 text-lg"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors mb-2">
+              Corporate Mobile Fleet &amp; Package Rationalization
+            </h3>
+            
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              Employee corporate mobile connections were historically assigned haphazardly on expensive, mismatched postpaid plans, generating massive recurring monthly telecom bills.
+            </p>
+
+            <div class="bg-dark-bg/80 p-3.5 rounded-xl border border-white/5 space-y-2 mb-4 text-xs">
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-purple-400 mt-0.5"></i>
+                <span><strong>Telecom Audit &amp; Consolidation:</strong> Audited entire mobile package fleet, negotiating and migrating all business users to a streamlined <strong>~LKR 1,300/user</strong> corporate tariff.</span>
+              </div>
+              <div class="flex items-start gap-2 text-slate-300">
+                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                <span><strong>Predictable OPEX:</strong> Saved substantial recurring capital every month while ensuring staff have seamless voice &amp; data allocations.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
+            <span class="text-slate-400 font-mono">Telecom Billing • Fleet Management</span>
+            <span class="text-purple-400 font-bold font-mono">Consolidated to ~LKR 1,300</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 🌟 FLAGSHIP SYSTEM: ENTERPRISE ENGINEERING CMMS SPOTLIGHT -->
+  <!-- ======================================================== -->
+  <section id="flagship" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative rounded-3xl p-8 sm:p-12 flagship-border shadow-glow-gold overflow-hidden">
+      
+      <!-- Ambient Gold Glow Backing -->
+      <div class="absolute -right-20 -top-20 w-96 h-96 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8 space-y-5">
+          
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+              <i class="fa-solid fa-crown text-amber-400"></i>
+              FLAGSHIP ENTERPRISE SYSTEM • HIGHEST EXECUTIVE COMMENDATION
+            </span>
+            <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live &amp; Active In Production
+            </span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+            TitanOps CMMS™ — <span class="gradient-text-gold">Enterprise Engineering &amp; Facility Maintenance System</span>
+          </h2>
+
+          <p class="text-cyan-300 font-mono text-xs sm:text-sm uppercase tracking-wider">
+            Multi-Outlet Equipment Breakdown Ticketing, Preventative Maintenance &amp; Engineering Asset Lifecycle Engine
+          </p>
+
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            The crown-jewel infrastructure platform engineered for Cyril Rodrigo Restaurants. Replaced fractured phone calls, WhatsApp messages, and delayed emergency technician responses with a centralized, state-of-the-art Computerized Maintenance Management System (CMMS). Outlet managers report equipment malfunctions instantly (kitchen chillers, ovens, POS terminals, HVAC, plumbing); engineering leads triage, schedule preventive maintenance, dispatch technicians, and track downtime telemetry.
+          </p>
+
+          <!-- Core Architecture & Value Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="bg-dark-bg/80 p-4 rounded-xl border border-white/5">
+              <div class="text-amber-400 font-bold text-lg mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-clock-rotate-left text-sm"></i> -65% MTTR
+              </div>
+              <div class="text-xs text-slate-300">Mean Time to Repair cut drastically across kitchen equipment</div>
+            </div>
+            <div class="bg-dark-bg/80 p-4 rounded-xl border border-white/5">
+              <div class="text-emerald-400 font-bold text-lg mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-sm"></i> Zero Equipment Loss
+              </div>
+              <div class="text-xs text-slate-300">Predictive maintenance alerts prevent catastrophic asset burnout</div>
+            </div>
+            <div class="bg-dark-bg/80 p-4 rounded-xl border border-white/5">
+              <div class="text-blue-400 font-bold text-lg mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-sm"></i> Full Transparency
+              </div>
+              <div class="text-xs text-slate-300">Direct executive reporting on maintenance spending &amp; vendor SLAs</div>
+            </div>
+          </div>
+
+          <!-- Stack Badges -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-dark-bg border border-white/10 text-amber-300">Node.js Engine</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-dark-bg border border-white/10 text-cyan-300">PostgreSQL Relational DB</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-dark-bg border border-white/10 text-emerald-300">Ticketing Lifecycle State Machine</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-dark-bg border border-white/10 text-violet-300">Asset Registry &amp; Barcode Integration</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono bg-dark-bg border border-white/10 text-rose-300">Real-time SLA Analytics</span>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Executive Callout Card -->
+        <div class="lg:col-span-4">
+          <div class="bg-dark-surface/90 rounded-2xl p-6 border border-amber-500/30 text-center space-y-4">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-3xl shadow-glow-amber">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white">Highest Executive Acclaim</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Recognized across corporate leadership as the most technically complex and operationally impactful deployment of the year.
+            </p>
+            <div class="pt-3 border-t border-white/5">
+              <div class="text-xs text-slate-400 font-mono">Equivalent Enterprise SaaS:</div>
+              <div class="text-sm font-bold text-white mt-0.5">$3,600+ / Year (MaintainX / UpKeep)</div>
+              <div class="text-xs text-emerald-400 font-semibold mt-1">100% In-House Built = $0 Recurring Fee</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Complete Financial Efficiency & SaaS Elimination Breakdown -->
+  <section id="overview" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
+      
+      <div class="max-w-3xl mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-2">
+          <i class="fa-solid fa-file-invoice-dollar"></i> Direct Capital Optimization Ledger
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Quantified Financial Savings Ledger (LKR 3.8M+ Total Value)
+        </h2>
+        <p class="text-slate-300 mt-2 text-sm sm:text-base">
+          Proven financial return achieved across software engineering, network routing, and telecom rationalization.
+        </p>
+      </div>
+
+      <!-- Financial Comparison Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm text-slate-300">
+          <thead class="text-xs font-mono uppercase bg-white/5 text-slate-400 border-b border-white/10">
+            <tr>
+              <th scope="col" class="px-5 py-3.5">Optimization Initiative</th>
+              <th scope="col" class="px-5 py-3.5">Previous / Market Approach</th>
+              <th scope="col" class="px-5 py-3.5">Estimated Cost / Expense</th>
+              <th scope="col" class="px-5 py-3.5">Harsha's Engineered Solution</th>
+              <th scope="col" class="px-5 py-3.5 text-right">Net Value Saved</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 font-medium">
+            <tr class="hover:bg-white/[0.02]">
+              <td class="px-5 py-4 font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-network-wired text-cyan-400"></i> POS Multi-Branch VPN
+              </td>
+              <td class="px-5 py-4 text-slate-400">Multi-site Scienter Licenses / Leased Lines</td>
+              <td class="px-5 py-4 text-rose-400 font-mono">LKR 1,000,000+</td>
+              <td class="px-5 py-4 text-emerald-400 font-semibold">Tailscale VPN Mesh Tunnels</td>
+              <td class="px-5 py-4 text-right font-bold text-emerald-400 font-mono">+LKR 1,000,000</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02]">
+              <td class="px-5 py-4 font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-screwdriver-wrench text-amber-400"></i> Engineering CMMS System
+              </td>
+              <td class="px-5 py-4 text-slate-400">Commercial CMMS SaaS (MaintainX)</td>
+              <td class="px-5 py-4 text-rose-400 font-mono">$3,600 / yr (~LKR 1.1M)</td>
+              <td class="px-5 py-4 text-amber-300 font-semibold">TitanOps CMMS™ (Proprietary)</td>
+              <td class="px-5 py-4 text-right font-bold text-emerald-400 font-mono">+LKR 1,100,000/yr</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02]">
+              <td class="px-5 py-4 font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-qrcode text-blue-400"></i> Candidate Ingestion Portal
+              </td>
+              <td class="px-5 py-4 text-slate-400">Recruitment ATS SaaS + Courier Costs</td>
+              <td class="px-5 py-4 text-rose-400 font-mono">$1,800 / yr (~LKR 550K)</td>
+              <td class="px-5 py-4 text-blue-300 font-semibold">SmartRecruit QR™</td>
+              <td class="px-5 py-4 text-right font-bold text-emerald-400 font-mono">+LKR 550,000/yr</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02]">
+              <td class="px-5 py-4 font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-cyan-400"></i> Morning Checklist System
+              </td>
+              <td class="px-5 py-4 text-slate-400">Paid Checklist Tool</td>
+              <td class="px-5 py-4 text-rose-400 font-mono">$50 / mo ($600/yr)</td>
+              <td class="px-5 py-4 text-emerald-400 font-semibold">PreFlight Ops™ (100% Free)</td>
+              <td class="px-5 py-4 text-right font-bold text-emerald-400 font-mono">+LKR 185,000/yr</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02]">
+              <td class="px-5 py-4 font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-mobile-screen-button text-purple-400"></i> Corporate Telecom Fleet
+              </td>
+              <td class="px-5 py-4 text-slate-400">Fragmented High-Cost Mobile Plans</td>
+              <td class="px-5 py-4 text-rose-400 font-mono">Excessive Postpaid OPEX</td>
+              <td class="px-5 py-4 text-purple-300 font-semibold">Consolidated ~LKR 1,300/user Tariff</td>
+              <td class="px-5 py-4 text-right font-bold text-emerald-400 font-mono">+LKR 300,000/yr</td>
+            </tr>
+            <tr class="hover:bg-white/[0.02]">
+              <td class="px-5 py-4 font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-emerald-400"></i> Utilities &amp; Food Wastage
+              </td>
+              <td class="px-5 py-4 text-slate-400">Unmonitored Leaks &amp; Spoilage</td>
+              <td class="px-5 py-4 text-rose-400 font-mono">Uncontrolled Loss</td>
+              <td class="px-5 py-4 text-emerald-300 font-semibold">UtilityPulse™ &amp; WasteGuard™</td>
+              <td class="px-5 py-4 text-right font-bold text-emerald-400 font-mono">+LKR 700,000+/yr</td>
+            </tr>
+          </tbody>
+          <tfoot class="bg-emerald-500/10 font-bold border-t border-emerald-500/30">
+            <tr>
+              <td colspan="4" class="px-5 py-4 text-white uppercase font-mono text-xs">Total Estimated Direct Financial Value &amp; Savings Generated</td>
+              <td class="px-5 py-4 text-right text-emerald-400 font-mono text-base font-extrabold">LKR 3,835,000+ Total Value</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Complete Systems Portfolio: All 7 Completed Systems -->
+  <section id="projects" class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-brand-500/10 text-brand-400 text-xs font-mono mb-2">
+          <i class="fa-solid fa-cubes-stacked"></i> Production Deliverables
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          The 7 Production Systems Portfolio
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-1">
+          Every custom platform built, tested, and actively utilized in live operations.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 p-1.5 bg-dark-surface border border-white/5 rounded-2xl self-start md:self-auto overflow-x-auto max-w-full">
+        <button onclick="filterProjects('all')" id="btn-all" class="px-4 py-2 text-xs font-semibold rounded-xl bg-brand-600 text-white transition-all shadow-sm">
+          All Systems (7)
+        </button>
+        <button onclick="filterProjects('operations')" id="btn-operations" class="px-4 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+          Operations &amp; Cost Control
+        </button>
+        <button onclick="filterProjects('hr')" id="btn-hr" class="px-4 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+          HR &amp; People Systems
+        </button>
+      </div>
+    </div>
+
+    <!-- 7 Systems Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+      
+      <!-- SYSTEM 1: Utility Tracker -->
+      <div class="project-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between group" data-category="operations">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+              <i class="fa-solid fa-bolt mr-1"></i> Operations &amp; Finance
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400">Live in Production</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+            UtilityPulse™ Meter Tracker
+          </h3>
+          <p class="text-xs font-mono text-cyan-400 mt-0.5 mb-3">
+            Multi-Outlet Electricity &amp; Water Consumption Telemetry
+          </p>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Audits monthly water bills and electricity sub-meter readings across all restaurant outlets. Features automated anomaly detection to spot abnormal utility spikes, underground water leaks, and unnecessary energy consumption before high bills arrive.
+          </p>
+
+          <div class="bg-dark-bg/60 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Leak Detection:</span>
+              <span class="font-bold text-emerald-400">Instant Alerting</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Financial Impact:</span>
+              <span class="font-bold text-cyan-400">Zero Unnoticed Waste</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-slate-300 rounded">Node.js</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-cyan-300 rounded">PostgreSQL</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-amber-300 rounded">Variance Engine</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+          <span>Outlet &amp; Finance Controls</span>
+          <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i> Fully Operational</span>
+        </div>
+      </div>
+
+      <!-- SYSTEM 2: Wastage Management -->
+      <div class="project-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between group" data-category="operations">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i class="fa-solid fa-leaf mr-1"></i> Cost Controller Suite
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400">Live in Production</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+            WasteGuard Intelligence™
+          </h3>
+          <p class="text-xs font-mono text-emerald-400 mt-0.5 mb-3">
+            Kitchen Wastage Auditing &amp; Gross Margin Protection
+          </p>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Outlet managers submit weekly kitchen wastage data with cost valuations. Integrates root-cause surveys and an executive Business Controller Dashboard to monitor outlet-wise spoilage trends and implement reduction strategies.
+          </p>
+
+          <div class="bg-dark-bg/60 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Auditing Cadence:</span>
+              <span class="font-bold text-blue-400">Weekly &amp; Monthly</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Executive Access:</span>
+              <span class="font-bold text-emerald-400">Business Controllers</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-slate-300 rounded">React Dashboard</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-emerald-300 rounded">Node / MongoDB</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-purple-300 rounded">Analytics Charting</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+          <span>Culinary Cost Control</span>
+          <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i> Fully Operational</span>
+        </div>
+      </div>
+
+      <!-- SYSTEM 3: Morning Checklist (Eliminated $50/mo) -->
+      <div class="project-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-amber-500/40 transition-all duration-300 flex flex-col justify-between group" data-category="operations">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+              <i class="fa-solid fa-hand-holding-dollar mr-1"></i> $50/mo Subscription Killed
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400">100% Free / Custom</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
+            PreFlight Ops™ Morning Checklist
+          </h3>
+          <p class="text-xs font-mono text-amber-400 mt-0.5 mb-3">
+            Pre-Opening Compliance &amp; Verification Portal
+          </p>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Replaced an expensive third-party SaaS tool ($50/mo) with a zero-cost proprietary application. Outlets complete mandatory morning operational audits, equipment readiness checks, and image uploads before opening doors.
+          </p>
+
+          <div class="bg-dark-bg/60 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Replaced SaaS Cost:</span>
+              <span class="font-bold text-rose-400 line-through">$50 / Month</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Current In-House Cost:</span>
+              <span class="font-bold text-emerald-400">$0.00 / Lifetime</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-slate-300 rounded">Node.js</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-amber-300 rounded">Responsive Web</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-cyan-300 rounded">Image Verification</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+          <span>Outlet Operations</span>
+          <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i> Fully Operational</span>
+        </div>
+      </div>
+
+      <!-- SYSTEM 4: SmartRecruit QR (HR) -->
+      <div class="project-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between group" data-category="hr">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+              <i class="fa-solid fa-users mr-1"></i> HR &amp; Talent
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400">Live in Production</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+            SmartRecruit QR™
+          </h3>
+          <p class="text-xs font-mono text-blue-400 mt-0.5 mb-3">
+            Omni-Channel QR Talent Ingestion &amp; Paperless CVs
+          </p>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Eliminated physical paper CV drop-offs at restaurant dining branches. Candidates scan branded tabletop QR stands, submit resumes digitally, and HR Assistants review applicants in a dedicated centralized management portal.
+          </p>
+
+          <div class="bg-dark-bg/60 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Paper Waste:</span>
+              <span class="font-bold text-emerald-400">100% Zero Paper</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Courier Delays:</span>
+              <span class="font-bold text-blue-400">Instant Transmission</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-slate-300 rounded">Node.js</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-cyan-300 rounded">MongoDB Atlas</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-amber-300 rounded">Dynamic QR</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+          <span>HR Department</span>
+          <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i> Fully Operational</span>
+        </div>
+      </div>
+
+      <!-- SYSTEM 5: ApexVote Enterprise (HR) -->
+      <div class="project-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between group" data-category="hr">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-purple-500/10 text-purple-400 border border-purple-500/20">
+              <i class="fa-solid fa-award mr-1"></i> Recognition &amp; Morale
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400">Secured Production</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+            ApexVote Enterprise™
+          </h3>
+          <p class="text-xs font-mono text-purple-400 mt-0.5 mb-3">
+            Cryptographic Employee of the Month Voting System
+          </p>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Built for administrative staff to elect monthly award winners. Engineered with anti-tamper session authentication, zero duplicate votes, automated time-window gates controlled by HR, and instantaneous mathematical tallying.
+          </p>
+
+          <div class="bg-dark-bg/60 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Duplicate Votes:</span>
+              <span class="font-bold text-emerald-400">0% Impossible</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-300">
+              <span>HR Hours Saved:</span>
+              <span class="font-bold text-purple-400">10+ Hrs / Month</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-slate-300 rounded">Node.js</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-purple-300 rounded">JWT Bearer</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-emerald-300 rounded">Time-Gate Logic</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+          <span>Admin &amp; HR</span>
+          <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i> Fully Operational</span>
+        </div>
+      </div>
+
+      <!-- SYSTEM 6: GeoAttend QR (Operations & Field Staff) -->
+      <div class="project-card glass-panel rounded-2xl p-6 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between group" data-category="operations">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <i class="fa-solid fa-location-dot mr-1"></i> Field Audit &amp; Attendance
+            </span>
+            <span class="text-[11px] font-mono text-emerald-400">Live in Production</span>
+          </div>
+
+          <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+            GeoAttend QR™ Field Portal
+          </h3>
+          <p class="text-xs font-mono text-emerald-400 mt-0.5 mb-3">
+            Outlet Visit &amp; Mobile Attendance Verification System
+          </p>
+
+          <p class="text-xs text-slate-300 leading-relaxed mb-4">
+            Solves field auditing accountability. When Head Office executive and admin staff conduct outlet inspections, they verify their presence on-site via cryptographically generated outlet QR codes, logging accurate timestamped attendance.
+          </p>
+
+          <div class="bg-dark-bg/60 p-3 rounded-xl border border-white/5 space-y-1.5 mb-4 text-xs">
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Location Verification:</span>
+              <span class="font-bold text-cyan-400">100% Branch Authenticated</span>
+            </div>
+            <div class="flex items-center justify-between text-slate-300">
+              <span>Audit Logging:</span>
+              <span class="font-bold text-emerald-400">Real-Time Timestamp</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-slate-300 rounded">Node.js</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-emerald-300 rounded">QR Token Validator</span>
+            <span class="px-2 py-0.5 text-[11px] font-mono bg-dark-surface border border-white/10 text-blue-300 rounded">Audit Logger</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+          <span>Operations &amp; Admin</span>
+          <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i> Fully Operational</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Technical Competencies & Credentials Arsenal -->
+  <section id="stack" class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-cyan-400 font-mono text-xs uppercase tracking-widest">Engineering Capabilities</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Comprehensive Technical Arsenal</h2>
+        <p class="text-slate-300 text-sm mt-2">Certified across modern software architecture, computer networking, enterprise databases, and UX design.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1: Software & Languages -->
+        <div class="bg-dark-surface/70 p-6 rounded-2xl border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Development &amp; Languages</h3>
+          <p class="text-xs text-slate-400 mb-4">8+ Programming Languages</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">JavaScript</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">Node.js</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">Python</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">TypeScript</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">PHP</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">C / C++</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-slate-300 font-mono">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Systems & Networking -->
+        <div class="bg-dark-surface/70 p-6 rounded-2xl border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Networks &amp; Infrastructure</h3>
+          <p class="text-xs text-slate-400 mb-4">Cisco CCNA &amp; CCNP Core</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-cyan-300 font-mono">Tailscale / WireGuard</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-cyan-300 font-mono">Cisco Routing</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-cyan-300 font-mono">VLANs &amp; Subnetting</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-cyan-300 font-mono">Site-to-Site VPN</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-cyan-300 font-mono">QoS &amp; Traffic Shaping</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-cyan-300 font-mono">Firewall / ACLs</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Database Engineering -->
+        <div class="bg-dark-surface/70 p-6 rounded-2xl border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Database Architecture</h3>
+          <p class="text-xs text-slate-400 mb-4">Relational &amp; NoSQL Mastery</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-emerald-300 font-mono">PostgreSQL</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-emerald-300 font-mono">MySQL</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-emerald-300 font-mono">MongoDB</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-emerald-300 font-mono">Schema Design</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-emerald-300 font-mono">Query Optimization</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-emerald-300 font-mono">Data Sanitization</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4: UI/UX & Prototyping -->
+        <div class="bg-dark-surface/70 p-6 rounded-2xl border border-white/5">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg mb-4">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">UI/UX &amp; Prototyping</h3>
+          <p class="text-xs text-slate-400 mb-4">Human-Centered Interface Design</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-purple-300 font-mono">Figma Wireframing</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-purple-300 font-mono">Responsive Web</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-purple-300 font-mono">Tailwind CSS</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-purple-300 font-mono">Interaction Design</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-purple-300 font-mono">Mobile-First PWA</span>
+            <span class="px-2 py-1 bg-white/5 rounded text-xs text-purple-300 font-mono">Accessibility</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Future Digital Transformation Roadmap -->
+  <section id="future" class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-blue-400 font-mono text-xs uppercase tracking-widest">Ongoing &amp; Future Vision</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Next-Phase Technology Roadmap</h2>
+      <p class="text-slate-300 text-sm mt-2">Strategic initiatives being planned and conceptualized for upcoming operational cycles.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="roadmap-grid">
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Active In Development</span>
+          <i class="fa-solid fa-globe text-cyan-400"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Corporate Brand Website (100% Track)</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          High-performance, modern restaurant web portal with dynamic menu showcase, location finders, and direct reservation triggers.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-emerald-500/30 transition-all">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Phase 2 • Automated Ops</span>
+          <i class="fa-solid fa-robot text-slate-500"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Executive Central BI Dashboard</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Aggregating all 7 internal systems (Engineering downtime, utilities, food wastage, CV pipeline, and checklists) into a unified live executive dashboard.
+        </p>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-purple-500/30 transition-all">
+        <div class="flex items-center justify-between mb-4">
+          <span class="px-2.5 py-1 rounded-md text-[11px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">Phase 3 • Security</span>
+          <i class="fa-solid fa-shield-halved text-slate-500"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Zero-Trust Network Segmentation</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          Hardening outlet Wi-Fi and POS payment terminals into isolated VLAN micro-segments to guarantee PCI-DSS compliance and prevent external intrusions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Verification Section -->
+  <section id="contact" class="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 relative overflow-hidden">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8 space-y-4">
+          <span class="text-cyan-400 font-mono text-xs uppercase tracking-widest">Connect &amp; Review</span>
+          <h2 class="text-3xl font-extrabold text-white">Let's Discuss Next-Gen Infrastructure &amp; Automation</h2>
+          <p class="text-slate-300 text-sm max-w-2xl leading-relaxed">
+            Ready to demonstrate live portals, technical architectures, or walk through database models and network topologies. Reach out via direct phone, WhatsApp, or email.
+          </p>
+
+          <div class="flex flex-wrap gap-3.5 pt-3">
+            <a href="mailto:harsharavindu9564@gmail.com" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold transition-all">
+              <i class="fa-solid fa-envelope text-cyan-400"></i>
+              <span>harsharavindu9564@gmail.com</span>
+            </a>
+            <a href="tel:+94719343835" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-semibold transition-all">
+              <i class="fa-solid fa-phone text-emerald-400"></i>
+              <span>+94 71 934 3835</span>
+            </a>
+            <a href="https://www.linkedin.com/in/harsha-senavirathne" target="_blank" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 text-xs font-semibold transition-all">
+              <i class="fa-brands fa-linkedin text-blue-400"></i>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex justify-center lg:justify-end">
+          <div class="p-6 bg-dark-surface/90 rounded-2xl border border-white/10 text-center w-full max-w-xs shadow-xl">
+            <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-check-double"></i>
+            </div>
+            <div class="text-sm font-bold text-white">Status: 7 Systems Active &amp; Verified</div>
+            <p class="text-xs text-slate-400 mt-1">Cyril Rodrigo Restaurants Corporate Tech Portfolio</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 🤖 FLOATING INTERACTIVE AI AGENT ("HARSHABOT AI") -->
+  <!-- ======================================================== -->
+  <div class="fixed bottom-6 right-6 z-50 no-print" id="ai-agent-container">
+    
+    <!-- Collapsed Trigger Button with Notification Pulse -->
+    <button onclick="toggleAIChat()" id="ai-trigger-btn" class="group relative flex items-center gap-3 px-4 py-3 rounded-full bg-gradient-to-r from-brand-600 via-purple-600 to-cyan-500 text-white shadow-glow-blue hover:scale-105 transition-all duration-300">
+      <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+      </span>
+      <div class="w-8 h-8 rounded-full bg-dark-bg/80 flex items-center justify-center text-cyan-300 font-mono text-sm font-bold">
+        <i class="fa-solid fa-robot"></i>
+      </div>
+      <div class="text-left pr-1">
+        <div class="text-xs font-bold leading-tight">Harsha AI Assistant</div>
+        <div class="text-[10px] text-cyan-200/90 font-mono">Ask me anything about Harsha</div>
+      </div>
+    </button>
+
+    <!-- Chat Modal Window (Initially Hidden) -->
+    <div id="ai-chat-window" class="hidden absolute bottom-16 right-0 w-[350px] sm:w-[410px] h-[520px] rounded-3xl glass-panel border border-cyan-500/30 shadow-2xl flex flex-col overflow-hidden backdrop-blur-2xl">
+      
+      <!-- Chat Header -->
+      <div class="p-4 bg-gradient-to-r from-dark-surface via-brand-900/40 to-dark-surface border-b border-white/10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-cyan-400 p-[1.5px]">
+            <div class="w-full h-full bg-dark-bg rounded-[10px] flex items-center justify-center text-cyan-400 text-base">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+          </div>
+          <div>
+            <div class="text-sm font-bold text-white flex items-center gap-1.5">
+              <span>HarshaBot AI</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            </div>
+            <div class="text-[10px] text-slate-400 font-mono">Trained on Harsha's 6-Mo KPIs &amp; Systems</div>
+          </div>
+        </div>
+        <button onclick="toggleAIChat()" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-all">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Chat Messages Container -->
+      <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs text-slate-200">
+        
+        <!-- Bot Greeting Message -->
+        <div class="flex items-start gap-2.5">
+          <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="bg-dark-surface/90 p-3.5 rounded-2xl rounded-tl-none border border-white/5 leading-relaxed space-y-2">
+            <p>👋 Hello! I am <strong>Harsha's Executive AI Assistant</strong>.</p>
+            <p>I know everything about Harsha's 7 production systems, his Cisco networking feats, how he saved <strong>LKR 3.8M+</strong>, his CCNA credentials, and his work under Kanishka Boss.</p>
+            <p class="text-cyan-400 font-mono text-[11px]">Click a topic below or type your question:</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Suggestion Chips -->
+      <div class="px-3 py-2 bg-dark-bg/60 border-t border-white/5 flex gap-1.5 overflow-x-auto text-[11px] no-scrollbar">
+        <button onclick="askQuestion('How did Harsha save LKR 3.8 Million?')" class="px-2.5 py-1 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/40 rounded-lg text-slate-300 hover:text-cyan-300 whitespace-nowrap transition-all">
+          💰 LKR 3.8M Savings
+        </button>
+        <button onclick="askQuestion('Tell me about the Flagship CMMS system')" class="px-2.5 py-1 bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-500/40 rounded-lg text-slate-300 hover:text-amber-300 whitespace-nowrap transition-all">
+          👑 Flagship CMMS
+        </button>
+        <button onclick="askQuestion('How did Harsha save 1M using VPN?')" class="px-2.5 py-1 bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 rounded-lg text-slate-300 hover:text-emerald-300 whitespace-nowrap transition-all">
+          🌐 1M Saved on VPN
+        </button>
+        <button onclick="askQuestion('What laptops and hardware were configured?')" class="px-2.5 py-1 bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/40 rounded-lg text-slate-300 hover:text-purple-300 whitespace-nowrap transition-all">
+          💻 16 Laptops &amp; IT
+        </button>
+        <button onclick="askQuestion('Who is Kanishka Boss?')" class="px-2.5 py-1 bg-white/5 hover:bg-blue-500/20 border border-white/10 hover:border-blue-500/40 rounded-lg text-slate-300 hover:text-blue-300 whitespace-nowrap transition-all">
+          🤝 Kanishka Boss
+        </button>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="p-3 bg-dark-surface border-t border-white/10 flex items-center gap-2">
+        <input type="text" id="chat-input" onkeydown="handleChatKey(event)" placeholder="Ask about Harsha's KPIs, systems..." class="flex-1 bg-dark-bg border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+        <button onclick="sendChatMessage()" class="w-8 h-8 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 text-white flex items-center justify-center hover:opacity-90 transition-all">
+          <i class="fa-solid fa-paper-plane text-xs"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5 text-center text-slate-500 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Harsha Senevirathne. Systems, Networks &amp; Hardware Documented.</p>
+      <div class="flex items-center gap-4">
+        <span>BSc (Hons) SLIIT</span>
+        <span>•</span>
+        <span>CCNA / CCNP</span>
+        <span>•</span>
+        <span>Mentored by Kanishka Boss</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Interactive Canvas + Audio Synthesizer + AI Agent + Filtering -->
+  <script>
+    /* ========================================================
+       1. WEB AUDIO API SYNTHESIZER (Futuristic Sci-Fi Sound Effects)
+       ======================================================== */
+    let sfxEnabled = true;
+    let audioCtx = null;
+
+    function playTechSound(type = 'click') {
+      if (!sfxEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        const now = audioCtx.currentTime;
+
+        if (type === 'click') {
+          // Crisp high-tech tick
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(1200, now);
+          osc.frequency.exponentialRampToValueAtTime(600, now + 0.05);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'chime') {
+          // Futuristic positive chime
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(587.33, now); // D5
+          osc.frequency.setValueAtTime(880, now + 0.08); // A5
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+          osc.start(now);
+          osc.stop(now + 0.3);
+        } else if (type === 'beep') {
+          // Low cyber pulse
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, now);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        }
+      } catch(e) {
+        console.warn("Web Audio not supported or blocked", e);
+      }
+    }
+
+    function toggleAudioSFX() {
+      sfxEnabled = !sfxEnabled;
+      const icon = document.getElementById('sfx-icon');
+      const text = document.getElementById('sfx-text');
+      if (sfxEnabled) {
+        icon.className = 'fa-solid fa-volume-high';
+        text.innerText = 'SFX: ON';
+        playTechSound('chime');
+      } else {
+        icon.className = 'fa-solid fa-volume-xmark text-slate-500';
+        text.innerText = 'SFX: OFF';
+      }
+    }
+
+    // Attach click sound to interactive buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('button, a').forEach(el => {
+        el.addEventListener('click', () => {
+          if (!el.id.includes('sfx-toggle')) playTechSound('click');
+        });
+      });
+    });
+
+    /* ========================================================
+       2. INTERACTIVE CANVAS NETWORK PARTICLES
+       ======================================================== */
+    const canvas = document.getElementById('network-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
+        this.radius = Math.random() * 1.8 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#38bdf8';
+        ctx.fill();
+      }
+    }
+
+    const particleCount = Math.min(window.innerWidth < 768 ? 25 : 55, 60);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateNetwork() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.18 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateNetwork);
+    }
+    animateNetwork();
+
+    /* ========================================================
+       3. HARSHABOT AI KNOWLEDGE BASE & CHATBOT ENGINE
+       ======================================================== */
+    function toggleAIChat() {
+      const windowEl = document.getElementById('ai-chat-window');
+      const isHidden = windowEl.classList.contains('hidden');
+      if (isHidden) {
+        windowEl.classList.remove('hidden');
+        playTechSound('chime');
+        document.getElementById('chat-input').focus();
+      } else {
+        windowEl.classList.add('hidden');
+        playTechSound('click');
+      }
+    }
+
+    function askQuestion(q) {
+      document.getElementById('chat-input').value = q;
+      sendChatMessage();
+    }
+
+    function handleChatKey(e) {
+      if (e.key === 'Enter') {
+        sendChatMessage();
+      }
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+
+      playTechSound('click');
+      appendMessage('user', text);
+      input.value = '';
+
+      // Generate AI Answer
+      setTimeout(() => {
+        playTechSound('chime');
+        const reply = generateBotReply(text);
+        appendMessage('bot', reply);
+      }, 400);
+    }
+
+    function appendMessage(sender, text) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = 'flex items-start gap-2.5';
+
+      if (sender === 'user') {
+        div.innerHTML = `
+          <div class="ml-auto bg-brand-600/90 text-white p-3 rounded-2xl rounded-tr-none text-xs leading-relaxed max-w-[85%] border border-blue-400/20">
+            ${text}
+          </div>
+          <div class="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-300 flex items-center justify-center text-xs shrink-0 mt-0.5">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        `;
+      } else {
+        div.innerHTML = `
+          <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="bg-dark-surface/90 p-3.5 rounded-2xl rounded-tl-none border border-white/5 leading-relaxed text-xs space-y-1.5 max-w-[90%]">
+            ${text}
+          </div>
+        `;
+      }
+
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function generateBotReply(query) {
+      const q = query.toLowerCase();
+
+      if (q.includes('save') || q.includes('salli') || q.includes('cost') || q.includes('3.8') || q.includes('million') || q.includes('roi')) {
+        return `<strong>💰 LKR 3,835,000+ Total Financial Savings Generated:</strong><br>
+        1. <strong>POS Multi-Branch VPN:</strong> Saved over <strong>LKR 1,000,000</strong> by engineering Tailscale VPN tunnels instead of buying multi-site Scienter licenses & leased lines.<br>
+        2. <strong>Flagship CMMS System:</strong> Eliminated commercial SaaS (MaintainX) saving <strong>LKR 1,100,000/yr</strong>.<br>
+        3. <strong>SmartRecruit QR:</strong> Replaced recruitment ATS portals saving <strong>LKR 550,000/yr</strong>.<br>
+        4. <strong>Morning Checklist:</strong> Eliminated a $50/mo paid tool ($600/yr) saving <strong>LKR 185,000/yr</strong>.<br>
+        5. <strong>Corporate Telecom Fleet:</strong> Consolidated mobile plans to ~LKR 1,300/user saving <strong>LKR 300,000/yr</strong>.<br>
+        6. <strong>Utility & Waste Auditing:</strong> Saved <strong>LKR 700,000+/yr</strong>.`;
+      }
+
+      if (q.includes('flagship') || q.includes('cmms') || q.includes('engineering') || q.includes('titanops')) {
+        return `<strong>👑 TitanOps CMMS™ (The Flagship System):</strong><br>
+        Harsha's most commended enterprise deployment! Replaced phone calls & WhatsApp breakdowns with a digital maintenance ticketing state-machine. Outlet managers log equipment breakdowns (chillers, ovens, POS, HVAC), engineering dispatches technicians, and track downtime.<br>
+        <strong>Key Metric:</strong> Slashed MTTR (Mean Time to Repair) by <strong>-65%</strong> and saved <strong>$3,600/yr</strong> in commercial software fees!`;
+      }
+
+      if (q.includes('vpn') || q.includes('scienter') || q.includes('tailscale') || q.includes('1m') || q.includes('pos')) {
+        return `<strong>🌐 Multi-Branch POS VPN Feat (Saved LKR 1,000,000+):</strong><br>
+        The company acquired only ONE single central POS location license for the Scienter system. Instead of purchasing multi-location licenses or expensive telecom leased circuits (which would cost over 1 Million LKR), Harsha leveraged <strong>Tailscale & WireGuard encrypted VPN mesh tunnels</strong>! Outlets now print bills and sync live orders seamlessly across branches for $0 additional license fees!`;
+      }
+
+      if (q.includes('laptop') || q.includes('hardware') || q.includes('copier') || q.includes('16') || q.includes('print')) {
+        return `<strong>💻 Hardware Fleet & Workstation Enablement:</strong><br>
+        • <strong>16 Brand-New Laptops:</strong> Procured and fully configured with administrative policies, security tweaks, and OS optimizations so admin staff have zero workstation lag.<br>
+        • <strong>Enterprise Copier:</strong> Procured and networked a heavy-duty commercial multi-function network copier with departmental user PIN authentication.<br>
+        • <strong>Corporate Emails:</strong> Configured smooth business emails for all administrative personnel and dining branches!`;
+      }
+
+      if (q.includes('kanishka') || q.includes('boss') || q.includes('mentor') || q.includes('leader')) {
+        return `<strong>🤝 Mentorship under Kanishka Boss (Head of IT):</strong><br>
+        Harsha works directly under Kanishka Boss, who provided visionary strategic leadership, complete trust, and technical backing. Kanishka empowered Harsha across every critical IT initiative, from infrastructure revamps and vendor renegotiations to proprietary software deployment, making Cyril Rodrigo Restaurants a tech-forward organization!`;
+      }
+
+      if (q.includes('network') || q.includes('wifi') || q.includes('router') || q.includes('uptime') || q.includes('ccna')) {
+        return `<strong>⚡ Cisco CCNA / CCNP Networking Achievements:</strong><br>
+        • <strong>Head Office Wi-Fi:</strong> Rescued from 10 Mbps congestion to <strong>100% stable Wi-Fi (0.0001% downtime)</strong>.<br>
+        • <strong>Outlet Routers Revamp:</strong> Slashed daily panic emergency support calls from <strong>5 calls/day down to ZERO</strong>, stabilizing 90%+ outlets on high-speed resilient links.<br>
+        • <strong>Network SLA:</strong> Maintained an unprecedented <strong>99.999% network uptime</strong>.`;
+      }
+
+      if (q.includes('system') || q.includes('project') || q.includes('karapu') || q.includes('7')) {
+        return `<strong>📦 All 7 Production Systems Built by Harsha:</strong><br>
+        1. <strong>TitanOps CMMS™</strong> (Flagship Engineering Maintenance)<br>
+        2. <strong>UtilityPulse™</strong> (Water & Electricity Leak Telemetry)<br>
+        3. <strong>WasteGuard Intelligence™</strong> (Kitchen Spoilage & Gross Margin Control)<br>
+        4. <strong>PreFlight Ops™</strong> (Morning Checklist - Replaced $50/mo tool)<br>
+        5. <strong>SmartRecruit QR™</strong> (Omni-Channel Paperless CV Ingestion)<br>
+        6. <strong>ApexVote Enterprise™</strong> (Anti-Tamper Voting Portal)<br>
+        7. <strong>GeoAttend QR™</strong> (Mobile Outlet Visit Attendance Verification)`;
+      }
+
+      if (q.includes('contact') || q.includes('phone') || q.includes('email') || q.includes('call') || q.includes('whatsapp')) {
+        return `<strong>📞 Get in Touch with Harsha:</strong><br>
+        • <strong>Phone / WhatsApp:</strong> <a href="tel:+94719343835" class="text-cyan-400 underline">+94 71 934 3835</a><br>
+        • <strong>Email:</strong> <a href="mailto:harsharavindu9564@gmail.com" class="text-cyan-400 underline">harsharavindu9564@gmail.com</a><br>
+        • <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/harsha-senavirathne" target="_blank" class="text-blue-400 underline">Harsha Senevirathne</a>`;
+      }
+
+      return `That's a great question! Harsha has completed <strong>7 in-house enterprise systems</strong>, revamped the multi-outlet Cisco network to <strong>99.999% uptime</strong>, configured <strong>16 brand-new admin laptops</strong>, and saved over <strong>LKR 3.8 Million+</strong> under the mentorship of <strong>Kanishka Boss</strong> at Cyril Rodrigo Restaurants. Would you like to know more about the Flagship CMMS, the POS VPN tunneling, or his technical stack?`;
+    }
+
+    /* ========================================================
+       4. CATEGORY FILTERING SCRIPT
+       ======================================================== */
+    function filterProjects(category) {
+      playTechSound('click');
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = {
+        all: document.getElementById('btn-all'),
+        operations: document.getElementById('btn-operations'),
+        hr: document.getElementById('btn-hr')
+      };
+
+      Object.keys(buttons).forEach(key => {
+        if(buttons[key]) {
+          buttons[key].className = 'px-4 py-2 text-xs font-semibold rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all';
+        }
+      });
+
+      if(buttons[category]) {
+        buttons[category].className = 'px-4 py-2 text-xs font-semibold rounded-xl bg-brand-600 text-white transition-all shadow-sm';
+      }
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

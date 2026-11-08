@@ -1478,6 +1478,12 @@
         <button onclick="askQuestion('What laptops and hardware were configured?')" class="px-2.5 py-1 bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/40 rounded-lg text-slate-300 hover:text-purple-300 whitespace-nowrap transition-all">
           💻 16 Laptops &amp; IT
         </button>
+        <button onclick="askQuestion('What does Harsha\'s LinkedIn profile say?')" class="px-2.5 py-1 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/40 rounded-lg text-slate-300 hover:text-cyan-300 whitespace-nowrap transition-all">
+          ?? LinkedIn Profile
+        </button>
+        <button onclick="askQuestion('Tell me everything about Harsha (assak mullak neera)')" class="px-2.5 py-1 bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 rounded-lg text-slate-300 hover:text-emerald-300 whitespace-nowrap transition-all">
+          ?? Full Deep-Dive
+        </button>
         <button onclick="askQuestion('Who is Mr. Kanishka?')" class="px-2.5 py-1 bg-white/5 hover:bg-blue-500/20 border border-white/10 hover:border-blue-500/40 rounded-lg text-slate-300 hover:text-blue-300 whitespace-nowrap transition-all">
           🤝 Mr. Kanishka
         </button>
@@ -1731,8 +1737,42 @@
     function generateBotReply(query) {
       const q = query.toLowerCase().trim();
 
-      // 1. Identity & Biography ("Who is Harsha?", "About Harsha", "Kawda Harsha?")
-      if (q.includes('who is') || q.includes('who are you') || q.includes('about harsha') || q.includes('tell me about') || q.includes('kawda') || q.includes('introduce') || q.includes('profile') || q === 'harsha' || q === 'harsha senevirathne' || q.includes('harsha gana')) {
+      // 1. LinkedIn Profile, Summary & Headline Specific Knowledge
+      if (q.includes('linkedin') || q.includes('linked in') || q.includes('headline') || q.includes('about section') || q.includes('summary')) {
+        return `<strong>💼 Harsha Senevirathne's Official LinkedIn Profile:</strong><br>
+        🔗 <strong>URL:</strong> <a href="https://www.linkedin.com/in/harsha-senavirathne" target="_blank" class="text-blue-400 font-bold underline">linkedin.com/in/harsha-senavirathne</a><br><br>
+        📌 <strong>LinkedIn Headline:</strong><br>
+        <em>Automation | Computer Systems & Network Administrator | BSc (Hons) SLIIT | Cisco CCNA | CCNP Enterprise Core (Reading) | Full-Stack & Multi-DB Architect</em><br><br>
+        📝 <strong>Executive About / Summary:</strong><br>
+        Results-driven Systems & Network Administrator with demonstrated expertise in enterprise automation, mission-critical network topology design, and capital expenditure reduction. Over the last 6 months at <strong>Cyril Rodrigo Restaurants</strong> (under the mentorship of <strong>Mr. Kanishka - Head of IT</strong>), Harsha single-handedly engineered <strong>7 in-house software platforms</strong>, modernized company-wide Cisco/VPN network routing to <strong>99.999% uptime</strong>, and saved over <strong>LKR 3,835,000+</strong> by eliminating third-party SaaS and vendor overheads.<br><br>
+        🌟 <strong>Core Competencies Highlighted on LinkedIn:</strong><br>
+        • Enterprise Systems & Process Automation (Node.js, Express, Python)<br>
+        • Cisco Enterprise Networking & VPN Mesh Tunnels (CCNA/CCNP, Tailscale, WireGuard)<br>
+        • High-Scale Database Architecture (PostgreSQL, MySQL, MongoDB Atlas)<br>
+        • IT Infrastructure Modernization (16 Laptops, Network Copiers, Business Email Fleets)<br>
+        • Strategic Cost Optimization & SaaS Replacement.`;
+      }
+
+      // 2. "Assak Mullak Neera" — Exhaustive 360-Degree Deep Dive
+      if (q.includes('assak') || q.includes('mullak') || q.includes('everything') || q.includes('deep dive') || q.includes('deep-dive') || q.includes('full bio') || q.includes('all details') || q.includes('complete profile')) {
+        return `<strong>🔍 Harsha Senevirathne — The Complete 360° Profile (Every Single Detail):</strong><br><br>
+        👤 <strong>Personal Identity:</strong> Harsha Senevirathne (Harsha Ravindu) | Automation & Systems Administrator at Cyril Rodrigo Restaurants.<br>
+        🎓 <strong>Higher Education:</strong> BSc (Hons) in Computer Systems and Networking — <strong>SLIIT</strong>.<br>
+        🛡️ <strong>Global Certifications:</strong> <strong>Cisco CCNA Certified</strong> | <strong>CCNP Enterprise Core</strong> (Reading).<br>
+        🤝 <strong>Leadership & Mentorship:</strong> Direct mentee and strategic collaborator under <strong>Mr. Kanishka (Head of IT)</strong>.<br>
+        💻 <strong>Programming Arsenal:</strong> 8+ Languages (Node.js, Python, JavaScript, TypeScript, PHP, C, C++, HTML5/CSS3, SQL).<br>
+        🗄️ <strong>Databases:</strong> PostgreSQL, MySQL, MongoDB Atlas (Schema design, indexing, Mongoose, ACID compliance).<br>
+        🌐 <strong>Networking Mastery:</strong> Cisco Routing, Tailscale/WireGuard VPNs, VLAN segmentation, Subnetting, QoS, ACLs, Firewall policies.<br>
+        👑 <strong>Flagship Software:</strong> TitanOps CMMS™ (Engineering Breakdown Ticketing - Slashed MTTR by 65%, saved $3,600/yr).<br>
+        📦 <strong>Other 6 Systems:</strong> UtilityPulse (Leaks/Meters), WasteGuard (Kitchen Spoilage), PreFlight Ops ($50/mo checklist killed), SmartRecruit QR (Zero-Paper CVs), ApexVote (Anti-Tamper Voting), GeoAttend QR (Mobile Outlets Attendance).<br>
+        💰 <strong>Direct Financial ROI:</strong> <strong>LKR 3,835,000+</strong> saved for Cyril Rodrigo Restaurants in 6 months.<br>
+        📶 <strong>Uptime SLA:</strong> <strong>99.999% uptime (0.0001% downtime)</strong> across Head Office and all restaurant outlets.<br>
+        🏢 <strong>Hardware Deployed:</strong> 16 Brand-new admin laptops, commercial heavy-duty network copier, enterprise email fleets.<br>
+        📞 <strong>Contact:</strong> +94 71 934 3835 | harsharavindu9564@gmail.com | LinkedIn: /in/harsha-senavirathne.`;
+      }
+
+      // 3. Identity, Biography & Introduction ("Who is Harsha?", "Kawda Harsha?")
+      if (q.includes('who is') || q.includes('who are you') || q.includes('about harsha') || q.includes('tell me about') || q.includes('kawda') || q.includes('introduce') || q.includes('profile') || q === 'harsha' || q === 'harsha senevirathne' || q.includes('harsha gana') || q.includes('oya kawda')) {
         return `<strong>⚡ Harsha Senevirathne</strong> is an exceptional <strong>Automation Specialist, Full-Stack Systems Developer & Cisco Network Administrator</strong> at <strong>Cyril Rodrigo Restaurants</strong>.<br><br>
         🎓 <strong>Education:</strong> BSc (Hons) in Computer Systems & Networking from <strong>SLIIT</strong>.<br>
         🛡️ <strong>Certifications:</strong> <strong>Cisco CCNA Certified</strong> & <strong>CCNP Enterprise Core (Reading)</strong>.<br>
@@ -1741,27 +1781,52 @@
         ⚡ <strong>Network SLA:</strong> Upgraded company network infrastructure to <strong>99.999% uptime (0.0001% downtime)</strong>.`;
       }
 
-      // 2. Education, Degree & University
-      if (q.includes('degree') || q.includes('education') || q.includes('sliit') || q.includes('university') || q.includes('campus') || q.includes('qualif') || q.includes('certif') || q.includes('study')) {
+      // 4. Education, Degree, Campus & Certifications
+      if (q.includes('degree') || q.includes('education') || q.includes('sliit') || q.includes('university') || q.includes('campus') || q.includes('qualif') || q.includes('certif') || q.includes('study') || q.includes('degree eka') || q.includes('igena')) {
         return `<strong>🎓 Education & Professional Qualifications:</strong><br>
         • <strong>Degree:</strong> BSc (Hons) Computer Systems and Networking — <strong>SLIIT</strong> (Sri Lanka Institute of Information Technology).<br>
-        • <strong>Global Certifications:</strong> Cisco Certified Network Associate (<strong>CCNA</strong>) Certified.<br>
+        • <strong>Global Certification:</strong> Cisco Certified Network Associate (<strong>CCNA</strong>) — Globally Verified.<br>
         • <strong>Advanced Studies:</strong> Cisco Certified Network Professional (<strong>CCNP Enterprise Core</strong> - Currently Reading).<br>
         • <strong>Development Proficiency:</strong> 8+ Programming Languages (Node.js, Python, JavaScript, TypeScript, PHP, C/C++, HTML5/CSS3).<br>
         • <strong>Database Architecture:</strong> Multi-DB Mastery across PostgreSQL, MySQL, and MongoDB.<br>
-        • <strong>UI/UX:</strong> Figma prototyping & human-centered interface design.`;
+        • <strong>UI/UX Engineering:</strong> Human-centered design, Figma wireframing, and Tailwind CSS responsive styling.`;
       }
 
-      // 3. Designation, Role & Job Description
-      if (q.includes('designation') || q.includes('title') || q.includes('role') || q.includes('job') || q.includes('position') || q.includes('what do you do') || q.includes('responsibility')) {
+      // 5. Designation, Role & Job Description
+      if (q.includes('designation') || q.includes('title') || q.includes('role') || q.includes('job') || q.includes('position') || q.includes('what do you do') || q.includes('responsibility') || q.includes('weda')) {
         return `<strong>💼 Official Designation & Role:</strong><br>
         • <strong>Title:</strong> Automation | Computer Systems & Network Administrator<br>
         • <strong>Company:</strong> Cyril Rodrigo Restaurants<br>
         • <strong>Department:</strong> Corporate IT Infrastructure & Software Systems<br>
-        • <strong>Core Mandate:</strong> End-to-end proprietary automation, enterprise system architecture, multi-outlet Cisco WAN/LAN routing, vendor renegotiation, zero-downtime operations, and capital expense elimination under Head of IT Mr. Kanishka.`;
+        • <strong>Key Responsibilities:</strong><br>
+        - Designing and deploying proprietary full-stack enterprise web platforms.<br>
+        - Managing multi-outlet Cisco WAN/LAN network topologies and Tailscale VPN mesh links.<br>
+        - Eliminating expensive recurring third-party software subscriptions.<br>
+        - Administering employee workstation fleets (16 Laptops + Copiers + Email systems).<br>
+        - Collaborative technical execution under the strategic direction of Head of IT Mr. Kanishka.`;
       }
 
-      // 4. Financial ROI, Money Saved, Cost Reduction
+      // 6. Complete Skills, Programming Languages & Tech Stack
+      if (q.includes('skill') || q.includes('language') || q.includes('tech stack') || q.includes('technolog') || q.includes('tools') || q.includes('framework') || q.includes('stack')) {
+        return `<strong>🛠️ Technical Skills & Comprehensive Tech Arsenal:</strong><br>
+        • <strong>Programming & Back-End:</strong> Node.js, Express.js REST APIs, Python, JavaScript (ES6+), TypeScript, PHP, C, C++.<br>
+        • <strong>Databases & Storage:</strong> PostgreSQL (Relational modeling & indexing), MySQL, MongoDB Atlas (NoSQL documents), AWS S3 / Multer cloud storage.<br>
+        • <strong>Networking & Cyber-Security:</strong> Cisco IOS Routing & Switching, CCNA, CCNP Enterprise Core, Tailscale & WireGuard VPN Mesh, VLAN 802.1Q segmentation, Subnetting, QoS traffic shaping, Firewalls & ACLs.<br>
+        • <strong>Front-End & UI/UX:</strong> Figma prototyping, Tailwind CSS, Responsive Mobile-First PWA, Web Audio API, HTML5 Canvas animation.<br>
+        • <strong>Systems & Hardware:</strong> Windows 10/11 Enterprise administration, Linux (Ubuntu/Debian), Network MFP Copiers, OS performance optimization.`;
+      }
+
+      // 7. Databases (PostgreSQL, MySQL, MongoDB)
+      if (q.includes('database') || q.includes('db') || q.includes('sql') || q.includes('mongo') || q.includes('postgres') || q.includes('mysql')) {
+        return `<strong>🗄️ Database Architecture & Engineering Mastery:</strong><br>
+        Harsha possesses dual relational and non-relational database expertise:<br>
+        • <strong>PostgreSQL:</strong> Relational schema modeling, foreign key constraints, and transactional integrity powering the Flagship TitanOps CMMS™ and UtilityPulse™.<br>
+        • <strong>MongoDB Atlas:</strong> Flexible JSON document modeling, indexing, and fast aggregation pipelines powering SmartRecruit QR™ and WasteGuard™.<br>
+        • <strong>MySQL:</strong> High-performance transactional queries and relational reporting.<br>
+        • <strong>Security & Sanitization:</strong> Strict query parameterized sanitization, zero SQL-injection vulnerabilities, and automated backup schedules.`;
+      }
+
+      // 8. Financial ROI, Money Saved, Cost Reduction
       if (q.includes('save') || q.includes('salli') || q.includes('cost') || q.includes('3.8') || q.includes('million') || q.includes('roi') || q.includes('money') || q.includes('expense') || q.includes('ithuru')) {
         return `<strong>💰 Over LKR 3,835,000+ Quantified Financial Return:</strong><br>
         1. <strong>POS Multi-Branch VPN (Scienter):</strong> Saved <strong>LKR 1,000,000+</strong> by architecting Tailscale/WireGuard mesh tunnels instead of buying costly multi-site licenses & circuits.<br>
@@ -1772,7 +1837,7 @@
         6. <strong>Utility & Kitchen Wastage Auditing:</strong> Prevented leakages & spoilage, saving <strong>LKR 700,000+/yr</strong>.`;
       }
 
-      // 5. Flagship CMMS System
+      // 9. Flagship CMMS System
       if (q.includes('flagship') || q.includes('cmms') || q.includes('engineering') || q.includes('titanops') || q.includes('maintenance') || q.includes('breakdown')) {
         return `<strong>👑 TitanOps CMMS™ — The Flagship Enterprise System:</strong><br>
         Harsha's most heavily commended project! Built from scratch to manage equipment breakdowns across all dining branches.<br>
@@ -1781,14 +1846,14 @@
         • <strong>Proven Results:</strong> Slashed Mean Time to Repair (MTTR) by <strong>-65%</strong> and saved <strong>$3,600/year (LKR 1.1M/yr)</strong> in commercial CMMS software subscriptions!`;
       }
 
-      // 6. VPN, Scienter & POS Networking
+      // 10. VPN, Scienter & POS Networking
       if (q.includes('vpn') || q.includes('scienter') || q.includes('tailscale') || q.includes('1m') || q.includes('pos') || q.includes('bill') || q.includes('printing')) {
         return `<strong>🌐 POS Multi-Branch VPN Tunneling (Saved LKR 1,000,000+):</strong><br>
         During Dialog telecom operations, Cyril Rodrigo Restaurants acquired only ONE single central POS location license for the Scienter management software. Buying multi-site licenses or dedicated telecom leased lines would cost over 1 Million LKR!<br><br>
         Harsha engineered encrypted <strong>Tailscale & WireGuard VPN mesh tunnels</strong> connecting dining outlets directly to the central Scienter instance. All outlets now process live orders and print customer bills smoothly with <strong>zero added licensing fees</strong>!`;
       }
 
-      // 7. Cisco Networks, Wi-Fi, Routers & Uptime
+      // 11. Cisco Networks, Wi-Fi, Routers & Uptime
       if (q.includes('network') || q.includes('wifi') || q.includes('wi-fi') || q.includes('router') || q.includes('uptime') || q.includes('ccna') || q.includes('head office') || q.includes('slow')) {
         return `<strong>⚡ Cisco CCNA / CCNP Networking Achievements:</strong><br>
         • <strong>Head Office Wi-Fi Revamp:</strong> Fixed chronic 10 Mbps congestion. Redesigned physical/logical topologies and QoS traffic shaping, delivering <strong>100% stable Wi-Fi with 0.0001% downtime</strong>.<br>
@@ -1796,7 +1861,7 @@
         • <strong>Overall SLA:</strong> Maintained a rock-solid <strong>99.999% network uptime SLA</strong> company-wide.`;
       }
 
-      // 8. Hardware, Laptops, Copier & Business Emails
+      // 12. Hardware, Laptops, Copier & Business Emails
       if (q.includes('laptop') || q.includes('hardware') || q.includes('copier') || q.includes('16') || q.includes('print') || q.includes('email') || q.includes('machine') || q.includes('pc')) {
         return `<strong>💻 Workstations, Hardware & Operational IT:</strong><br>
         • <strong>16 Brand-New Laptops:</strong> Procured, customized, and deployed with enterprise admin policies and OS optimizations for administrative staff to guarantee zero workstation lag.<br>
@@ -1804,13 +1869,13 @@
         • <strong>Business Emails:</strong> Standardized corporate email routing and mailbox setups across admin staff and restaurant outlets.`;
       }
 
-      // 9. Mentorship under Mr. Kanishka
+      // 13. Mentorship under Mr. Kanishka
       if (q.includes('kanishka') || q.includes('boss') || q.includes('mentor') || q.includes('leader') || q.includes('head of it') || q.includes('manager')) {
         return `<strong>🤝 Mentorship Under Mr. Kanishka (Head of IT):</strong><br>
         Harsha works directly under Mr. Kanishka, who provided visionary leadership, strategic direction, and total technical trust. Mr. Kanishka involved Harsha in every high-level IT roadmap decision—from infrastructure revamps and vendor renegotiations to proprietary software deployment. This collaborative partnership enabled Harsha to deliver unprecedented value to Cyril Rodrigo Restaurants!`;
       }
 
-      // 10. All 7 Systems Summary
+      // 14. All 7 Systems Summary
       if (q.includes('system') || q.includes('project') || q.includes('karapu') || q.includes('7') || q.includes('software') || q.includes('apps')) {
         return `<strong>📦 All 7 Enterprise Systems Built by Harsha:</strong><br>
         1. 👑 <strong>TitanOps CMMS™</strong> — Engineering Equipment Breakdown & Maintenance (Flagship)<br>
@@ -1822,31 +1887,27 @@
         7. 📍 <strong>GeoAttend QR™</strong> — Mobile Outlet Visit Attendance Verification`;
       }
 
-      // 11. Individual System: Utility Pulse
+      // 15. Individual Systems Breakdowns
       if (q.includes('utility') || q.includes('meter') || q.includes('electricity') || q.includes('water') || q.includes('leak')) {
         return `<strong>⚡ UtilityPulse™ Meter Tracker:</strong><br>
-        Monitors monthly electricity sub-meters and water bills across all dining branches. Automatically flags abnormal consumption spikes and hidden water leaks before heavy bills arrive, directly protecting company operating margins!`;
+        Audits monthly electricity sub-meters and water bills across all dining branches. Automatically flags abnormal consumption spikes and hidden water leaks before heavy bills arrive, directly protecting company operating margins!`;
       }
 
-      // 12. Individual System: Wastage Management
       if (q.includes('wastage') || q.includes('waste') || q.includes('spoilage') || q.includes('food')) {
         return `<strong>🥗 WasteGuard Intelligence™:</strong><br>
         Weekly kitchen spoilage and food wastage logging suite. Outlet managers record waste valuations, complete reduction surveys, and Business Controllers monitor outlet trends in real-time via a dedicated executive dashboard.`;
       }
 
-      // 13. Individual System: Morning Checklist
       if (q.includes('checklist') || q.includes('morning') || q.includes('preflight') || q.includes('50')) {
         return `<strong>📋 PreFlight Ops™ Morning Checklist:</strong><br>
         Replaced an expensive third-party SaaS checklist tool ($50/month = $600/year) with a customized, zero-cost proprietary web app. Outlets complete mandatory morning equipment checks and compliance uploads before opening doors.`;
       }
 
-      // 14. Individual System: SmartRecruit QR
       if (q.includes('recruit') || q.includes('cv') || q.includes('candidate') || q.includes('hr') || q.includes('qr recruit')) {
         return `<strong>📱 SmartRecruit QR™ Talent Engine:</strong><br>
         Transformed branch hiring into a 100% paperless digital pipeline. Candidates scan branded tabletop QR codes at outlets to submit resumes, which stream directly to the HR Assistant portal in real time, saving courier delays and paper costs.`;
       }
 
-      // 15. Individual System: ApexVote (Voting)
       if (q.includes('vote') || q.includes('voting') || q.includes('employee of the month') || q.includes('apex')) {
         return `<strong>🗳️ ApexVote Enterprise™:</strong><br>
         High-security internal ballot platform for administrative staff to elect monthly award winners. Features anti-tamper session authentication, zero duplicate votes, automated time-window gates controlled by HR, and instantaneous mathematical tallying.`;
@@ -1861,7 +1922,7 @@
       }
 
       // 17. Value, Appraisal, Promotion, Strengths ("Why Harsha?")
-      if (q.includes('appraisal') || q.includes('promotion') || q.includes('increment') || q.includes('salary') || q.includes('strength') || q.includes('why hire') || q.includes('value') || q.includes('worth')) {
+      if (q.includes('appraisal') || q.includes('promotion') || q.includes('increment') || q.includes('salary') || q.includes('strength') || q.includes('why hire') || q.includes('value') || q.includes('worth') || q.includes('soft skill') || q.includes('work ethic')) {
         return `<strong>🏆 Why Harsha Senevirathne is a High-Value Enterprise Asset:</strong><br>
         1. <strong>Dual-Threat Engineering:</strong> Rare combination of Cisco Network Administration (CCNA/CCNP) AND Full-Stack Software Development.<br>
         2. <strong>Proven Financial ROI:</strong> Delivered <strong>LKR 3.8M+</strong> in direct savings in only 6 months.<br>
@@ -1871,7 +1932,7 @@
       }
 
       // 18. Contact & Socials
-      if (q.includes('contact') || q.includes('phone') || q.includes('email') || q.includes('call') || q.includes('whatsapp') || q.includes('linkedin') || q.includes('number')) {
+      if (q.includes('contact') || q.includes('phone') || q.includes('email') || q.includes('call') || q.includes('whatsapp') || q.includes('number') || q.includes('reach')) {
         return `<strong>📞 Contact Harsha Directly:</strong><br>
         • <strong>Phone / WhatsApp:</strong> <a href="tel:+94719343835" class="text-cyan-400 font-bold underline">+94 71 934 3835</a><br>
         • <strong>Email:</strong> <a href="mailto:harsharavindu9564@gmail.com" class="text-cyan-400 font-bold underline">harsharavindu9564@gmail.com</a><br>
@@ -1881,18 +1942,19 @@
       // 19. Friendly Salutations (Hi, Hello, Good morning)
       if (q === 'hi' || q === 'hello' || q === 'hey' || q.includes('good morning') || q.includes('good evening') || q === 'ayubowan') {
         return `Hello! 👋 I am <strong>Harsha's Executive AI Assistant</strong>.<br><br>
-        Ask me anything! For example:<br>
-        • <em>"Who is Harsha?"</em><br>
-        • <em>"What is Harsha's degree & qualifications?"</em><br>
+        Ask me anything about Harsha! For example:<br>
+        • <em>"What does Harsha's LinkedIn say?"</em><br>
+        • <em>"Tell me everything about Harsha (full bio)"</em><br>
+        • <em>"What are his technical skills & languages?"</em><br>
         • <em>"How did Harsha save LKR 3.8 Million?"</em><br>
         • <em>"Tell me about the Flagship CMMS"</em><br>
-        • <em>"How did Harsha save 1M using VPN?"</em>`;
+        • <em>"What is his work with Mr. Kanishka?"</em>`;
       }
 
       // 20. Comprehensive Default Fallback
       return `Harsha Senevirathne is the <strong>Automation & Computer Systems / Network Administrator</strong> at <strong>Cyril Rodrigo Restaurants</strong> (BSc SLIIT, Cisco CCNA, CCNP Core Reading).<br><br>
       Over the last 6 months under <strong>Mr. Kanishka</strong>, he deployed <strong>7 enterprise software systems</strong>, maintained <strong>99.999% network uptime</strong>, configured <strong>16 admin laptops</strong>, and saved over <strong>LKR 3,835,000+</strong>.<br><br>
-      You can ask me about his <strong>systems, networking feats, education, Mr. Kanishka mentorship, or contact info</strong>!`;
+      You can ask me about his <strong>LinkedIn profile, systems, networking feats, education, Mr. Kanishka mentorship, or contact info</strong>!`;
     }
 
 

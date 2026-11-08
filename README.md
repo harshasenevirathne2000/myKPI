@@ -67,7 +67,7 @@
 ---
 
 ## 🤝 Executive Leadership & Mentorship
-Proudly engineered and delivered under the strategic vision, leadership, and trust of **Kanishka (Head of IT)** at Cyril Rodrigo Restaurants.
+Proudly engineered and delivered under the strategic vision, leadership, and trust of **Mr. Kanishka (Head of IT)** at Cyril Rodrigo Restaurants.
 
 ---
 
